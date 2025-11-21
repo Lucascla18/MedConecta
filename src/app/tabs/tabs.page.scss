@@ -1,0 +1,20 @@
+ion-tab-button {
+  // 1. Esconde o ícone preenchido (o com a classe .tab-selected)
+  .tab-selected {
+    display: none;
+  }
+  
+  // 2. Quando a aba está ativa...
+  &.tab-selected {
+    
+    // ...esconde o ícone de contorno (o primeiro)
+    ion-icon {
+      display: none;
+    }
+    
+    // ...e mostra o ícone preenchido (o com a classe)
+    .tab-selected {
+      display: block;
+    }
+  }
+}

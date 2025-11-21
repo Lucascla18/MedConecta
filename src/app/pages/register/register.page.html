@@ -1,0 +1,68 @@
+<ion-content>
+  <div class="login-container">
+    <div class="login-card">
+
+      <div class="logo-header">
+        <img src="assets/logo.jpg" alt="Logo MedConecta">
+        <h1>MedConecta</h1>
+      </div>
+
+      <form id="register-form" (ngSubmit)="handleRegister()">
+        <ion-item lines="none">
+          <ion-input label="Nome Completo" label-placement="floating" type="text" placeholder="Seu nome"
+            [(ngModel)]="formData.nome" name="nome" required></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="E-mail" label-placement="floating" type="email" placeholder="seuemail@exemplo.com"
+            [(ngModel)]="formData.email" name="email" required email></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="Senha" label-placement="floating" type="password" placeholder="Crie uma senha forte (mín. 6 caracteres)"
+            [(ngModel)]="formData.senha" name="senha" required minlength="6"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="Confirmar Senha" label-placement="floating" type="password" placeholder="Confirme sua senha"
+            [(ngModel)]="formData.confirmarSenha" name="confirmarSenha" required></ion-input>
+        </ion-item>
+
+        <div *ngIf="formData.confirmarSenha.length > 0" class="validation-message">
+          <span *ngIf="formData.senha === formData.confirmarSenha" class="match">
+            <ion-icon name="checkmark-circle-outline"></ion-icon> Senhas conferem!
+          </span>
+          <span *ngIf="formData.senha !== formData.confirmarSenha" class="no-match">
+            <ion-icon name="close-circle-outline"></ion-icon> As senhas não são iguais.
+          </span>
+        </div>
+
+        <div *ngIf="errorMessage" class="validation-message no-match">
+          {{ errorMessage }}
+        </div>
+
+        <ion-button expand="block" shape="round" type="submit" class="ion-margin-top"
+          [disabled]="formData.senha !== formData.confirmarSenha && formData.confirmarSenha.length > 0">
+          Criar Conta
+        </ion-button>
+      </form>
+
+      <div class="divider">ou continue com</div>
+
+      <div class="social-login-buttons">
+        <ion-button fill="clear" shape="round">
+          <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" shape="round">
+          <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" shape="round">
+          <ion-icon slot="icon-only" name="logo-apple"></ion-icon>
+        </ion-button>
+      </div>
+
+      <div class="toggle-form">
+        <span>Já tem uma conta?</span>
+        <a [routerLink]="['/login']">Entrar</a>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

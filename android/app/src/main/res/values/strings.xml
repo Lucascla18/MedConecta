@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MedConecta</string>
+    <string name="title_activity_main">MedConecta</string>
+    <string name="package_name">com.medconecta.app</string>
+    <string name="custom_url_scheme">com.medconecta.app</string>
+</resources>

@@ -1,0 +1,7 @@
+{
+  "name": "meuAppTelemedicina",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

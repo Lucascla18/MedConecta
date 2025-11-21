@@ -1,0 +1,202 @@
+/* --- CONFIGURAÇÃO DA PÁGINA --- */
+ion-toolbar {
+  --background: #ffffff;
+  ion-title {
+    font-weight: 700;
+    color: #1e293b;
+    padding-left: 16px;
+  }
+}
+
+ion-content {
+  --background: #f8fafc;
+}
+
+/* --- CORREÇÃO DOS BOTÕES DE ABA (SEGMENT) --- */
+ion-segment {
+  background: #f1f5f9; /* Fundo cinza claro do container */
+  margin: 16px;
+  padding: 4px;
+  border-radius: 12px;
+  width: auto;
+}
+
+ion-segment-button {
+  --indicator-color: transparent; /* Remove a linha de baixo padrão */
+  --background-checked: #ffffff;  /* Fundo branco quando selecionado */
+  --color-checked: var(--ion-color-primary); /* Texto azul quando selecionado */
+  --color: #64748b; /* Texto cinza quando não selecionado */
+  
+  min-height: 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  transition: transform 0.2s ease;
+  
+  /* Sombra suave apenas no botão selecionado */
+  &.segment-button-checked {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+}
+
+/* --- CARD DE CONSULTA --- */
+.appointment-list-card {
+  margin: 16px;
+  padding: 0; /* Padding removido aqui e aplicado internamente */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+}
+
+/* Conteúdo principal do Card */
+ion-item {
+  --background: transparent;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  padding-top: 12px;
+}
+
+/* --- CORREÇÃO DO AVATAR (VIBRANTE) --- */
+.list-avatar {
+  width: 55px;  /* Levemente maior */
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* MUDANÇA CHAVE: Cor do texto escura para dar contraste com o fundo pastel */
+  color: #334155; 
+  font-weight: 800; /* Bem negrito */
+  font-size: 18px;
+  
+  /* Adiciona profundidade para a cor "saltar" da tela */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+  border: 2px solid #ffffff; /* Borda branca para definição */
+  
+  /* Garante transição suave se mudar de aba */
+  transition: all 0.3s ease;
+}
+
+/* --- MANTÉM O ESTILO CINZA NAS ANTERIORES --- */
+.appointment-list-card.past {
+  /* ... outros estilos ... */
+  
+  .list-avatar { 
+    /* Nas passadas, removemos a vivacidade */
+    filter: grayscale(100%); 
+    opacity: 0.5; 
+    box-shadow: none; /* Remove a sombra */
+    color: #ffffff; /* Volta para branco ou cinza claro para ficar apagado */
+  }
+}
+
+/* Texto do Card */
+ion-label h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+ion-label p {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* --- RODAPÉ DO CARD (Data e Botões) --- */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 8px;
+  background: #fcfcfc; /* Levemente diferente para separar */
+}
+
+.time-badge {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+  
+  ion-icon {
+    font-size: 18px;
+    margin-right: 6px;
+    color: var(--ion-color-primary);
+  }
+}
+
+/* Container dos botões */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons ion-button {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+  height: 32px;
+}
+
+/* --- MEDIA QUERY: REGRAS PARA CELULARES PEQUENOS --- */
+/* Se a tela for menor que 380px (iPhone SE, Androids pequenos) */
+@media (max-width: 380px) {
+  .card-footer {
+    flex-direction: column; /* Empilha um em cima do outro */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    gap: 12px; /* Espaço entre a data e os botões */
+  }
+  
+  .time-badge {
+    width: 100%; /* Data ocupa a linha toda */
+    margin-bottom: 4px;
+  }
+  
+  .action-buttons {
+    width: 100%;
+    justify-content: space-between; /* Botões se espalham */
+  }
+  
+  .action-buttons ion-button {
+    flex: 1; /* Botões esticam para ficar fáceis de clicar */
+  }
+}
+
+/* --- ESTILOS PARA CONSULTAS PASSADAS (ANTERIORES) --- */
+.appointment-list-card.past {
+  background: #f8fafc; /* Fundo levemente cinza */
+  border-color: #e2e8f0;
+  
+  /* AQUI ESTÁ O TRUQUE DO CINZA */
+  .list-avatar { 
+    filter: grayscale(100%); /* Tira a cor do avatar */
+    opacity: 0.6; /* Deixa mais suave */
+  }
+  
+  ion-label h2, ion-label p {
+    color: #94a3b8; /* Texto mais claro */
+  }
+  
+  .time-badge { 
+    color: #94a3b8; 
+    ion-icon { color: #94a3b8; } /* Ícone cinza também */
+  }
+}
+
+/* Empty State */
+.empty-container {
+  text-align: center;
+  padding: 60px 20px;
+  color: #94a3b8;
+  
+  p { font-size: 16px; font-weight: 500; }
+}

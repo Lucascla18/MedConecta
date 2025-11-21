@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+
+        <!-- ======================================================= -->
+        <!-- MODO TELA CHEIA (FULLSCREEN) - Oculta a Barra Superior -->
+        <!-- ======================================================= -->
+        
+        <!-- 1. Ativa o modo tela cheia (Esconde relógio/bateria) -->
+        <item name="android:windowFullscreen">true</item>
+        
+        <!-- 2. Remove sombra da barra de conteúdo -->
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- 3. Garante que o layout preencha tudo -->
+        <item name="android:fitsSystemWindows">false</item>
+        
+    </style>
+
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="android:background">@drawable/splash</item>
+        <!-- Garante que a Splash Screen também seja Fullscreen -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

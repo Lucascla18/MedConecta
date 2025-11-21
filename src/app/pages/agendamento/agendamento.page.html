@@ -1,0 +1,117 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text="" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agendar Consulta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <section>
+    <ion-label class="section-label">Especialista</ion-label>
+    
+    <div class="doctor-selector" (click)="setOpen(true)">
+      <div class="selected-info" *ngIf="selectedDoctor">
+        <div class="mini-avatar" [style.background-color]="selectedDoctor.color">
+          {{ selectedDoctor.initials }}
+        </div>
+        <div class="text">
+          <span class="name">{{ selectedDoctor.name }}</span>
+          <span class="spec">{{ selectedDoctor.specialty }}</span>
+        </div>
+      </div>
+
+      <div class="placeholder-info" *ngIf="!selectedDoctor">
+        <ion-icon name="search-outline"></ion-icon>
+        <span>Clique para buscar um médico</span>
+      </div>
+
+      <ion-icon name="chevron-down-outline" class="chevron"></ion-icon>
+    </div>
+  </section>
+
+  <section>
+    <ion-label class="section-label">Data</ion-label>
+    <div class="calendar-container">
+      <ion-datetime 
+        presentation="date" 
+        [(ngModel)]="selectedDate"
+        locale="pt-BR"
+        [min]="minDate"
+        size="cover">
+      </ion-datetime>
+    </div>
+  </section>
+
+  <section>
+    <ion-label class="section-label">Manhã</ion-label>
+    <div class="time-grid">
+      <div class="time-chip" *ngFor="let time of morningSlots"
+        [class.selected]="selectedTime === time" (click)="selectTime(time)">
+        {{ time }}
+      </div>
+    </div>
+
+    <ion-label class="section-label mt-4">Tarde</ion-label>
+    <div class="time-grid">
+      <div class="time-chip" *ngFor="let time of afternoonSlots"
+        [class.selected]="selectedTime === time" (click)="selectTime(time)">
+        {{ time }}
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-space"></div>
+
+</ion-content>
+
+<div class="fixed-bottom">
+  <ion-button expand="block" shape="round" (click)="saveAppointment()" 
+    [disabled]="!selectedDoctor || !selectedTime">
+    Confirmar Agendamento
+  </ion-button>
+</div>
+
+<ion-modal [isOpen]="isDoctorModalOpen" (didDismiss)="setOpen(false)">
+  <ng-template>
+    
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Selecionar Médico</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)" color="medium">
+            <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      
+      <ion-toolbar>
+        <ion-searchbar 
+          placeholder="Buscar por nome..." 
+          mode="ios" 
+          (ionInput)="searchDoctor($event)">
+        </ion-searchbar>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines="none">
+        <ion-item button *ngFor="let doc of filteredDoctors" (click)="selectDoctor(doc)" class="doctor-item">
+          <ion-avatar slot="start" [style.background-color]="doc.color" class="modal-avatar">
+            {{ doc.initials }}
+          </ion-avatar>
+          
+          <ion-label>
+            <h2>{{ doc.name }}</h2>
+            <p>{{ doc.specialty }}</p>
+          </ion-label>
+          
+          <ion-icon name="checkmark-circle" color="primary" slot="end" *ngIf="selectedDoctor?.id === doc.id"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ng-template>
+</ion-modal>

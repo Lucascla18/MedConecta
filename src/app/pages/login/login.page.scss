@@ -1,0 +1,150 @@
+/* --- CONFIGURAÇÃO GERAL --- */
+:host {
+  --ion-font-family: 'Inter', sans-serif;
+  display: block;
+  height: 100%;
+}
+
+ion-content {
+  --background: #ffffff;
+  --ion-background-color: #ffffff;
+  --overflow: auto; 
+  --height: 100%; 
+}
+
+/* Container que Ocupa Toda a Altura */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  /* Centraliza verticalmente o bloco principal */
+  justify-content: center; 
+  align-items: center;
+  min-height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* O Cartão do Formulário: Usa margens auto para centralizar o bloco verticalmente */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  
+  /* CORREÇÃO PARA CENTRALIZAR O BLOCO INTEIRO EM TELAS GRANDES */
+  margin: auto 0; 
+  
+  padding: 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: gap 0.3s ease; 
+
+  /* DÁ UM RESPIRO INTERNO CONSISTENTE */
+  padding-top: 40px; 
+  padding-bottom: 40px; 
+}
+
+/* --- LOGO E TÍTULO --- */
+.logo-header {
+  text-align: center;
+  margin-bottom: 10px;
+  
+  img {
+    width: 120px; height: 120px; object-fit: contain; transition: all 0.3s ease;
+  }
+  
+  h1 {
+    font-size: 26px; font-weight: 700; margin-top: 10px; color: #1e293b; transition: font-size 0.3s ease;
+  }
+}
+
+/* --- INPUTS --- */
+ion-item {
+  --background: #f8fafc; --border-radius: 12px; --padding-start: 16px; --inner-border-width: 0;
+  color: #0f172a; margin-bottom: 16px; border: 1px solid #e2e8f0;
+  height: 56px; --min-height: 56px; transition: all 0.3s ease;
+}
+
+/* --- BOTÕES PRINCIPAIS --- */
+ion-button[shape="round"] {
+  --border-radius: 12px; height: 50px; font-weight: 600; font-size: 16px; margin-top: 8px;
+  --box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.25); transition: height 0.3s ease;
+}
+
+/* --- BOTÕES SOCIAIS (RESTITUÍDO O ESTILO ORIGINAL) --- */
+.social-login-buttons {
+  display: flex; 
+  justify-content: space-around; 
+  gap: 16px; 
+  margin-bottom: 10px;
+  
+  ion-button {
+    /* CORREÇÃO: Tamanho fixo para que não se estiquem para 100% */
+    flex: 0 0 70px; 
+    height: 50px;
+    --background: #f8fafc; --border-color: #e2e8f0;
+    --border-width: 1px; --border-style: solid; --box-shadow: none;
+    margin-top: 0; font-size: 22px; --color: #334155;
+    --border-radius: 10px; 
+  }
+}
+
+/* Links e Divisores */
+.forgot-password-link {
+  text-align: right; font-size: 14px; color: var(--ion-color-primary); font-weight: 600; text-decoration: none; margin-top: -8px; margin-bottom: 8px;
+}
+
+.divider {
+  display: flex; align-items: center; color: #94a3b8; font-size: 13px; margin: 20px 0;
+}
+.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #e2e8f0; }
+.divider:not(:empty)::before { margin-right: 1em; }
+.divider:not(:empty)::after { margin-left: 1em; }
+
+.toggle-form {
+  text-align: center; margin-top: 16px; font-size: 14px; color: #64748b;
+  a { color: var(--ion-color-primary); font-weight: 700; text-decoration: none; margin-left: 4px; }
+}
+
+/* ==========================================================================
+   OTIMIZAÇÃO RESPONSIVA (Compactação de Altura)
+   ========================================================================== */
+@media (max-height: 740px) {
+  
+  .login-container { padding: 16px; }
+  .login-card { 
+    gap: 12px; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+  }
+
+  /* Compactação */
+  .logo-header {
+    margin-bottom: 0;
+    img { width: 60px; height: 60px; } 
+    h1 { font-size: 20px; margin-top: 4px; display: block !important; } 
+  }
+
+  ion-item { height: 48px; --min-height: 48px; margin-bottom: 10px; font-size: 14px; }
+  ion-button[shape="round"] { height: 45px; font-size: 15px; margin-top: 4px; }
+  
+  /* Botões sociais em telas pequenas */
+  .social-login-buttons {
+    gap: 10px;
+    ion-button { flex: 0 0 60px; height: 45px; } 
+  }
+  
+  .divider { margin: 12px 0; font-size: 12px; }
+  .toggle-form { margin-top: 10px; padding-bottom: 10px; }
+}
+
+/* MODO ULTRA COMPACTO (Abaixo de 600px de altura) */
+@media (max-height: 600px) {
+  .logo-header {
+    img { width: 50px; height: 50px; }
+    h1 { font-size: 18px; }
+  }
+  .login-card { gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+}

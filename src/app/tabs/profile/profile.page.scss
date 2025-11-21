@@ -1,0 +1,100 @@
+ion-toolbar {
+  --background: #ffffff;
+  ion-title {
+    font-weight: 700;
+    color: #1e293b;
+    padding-left: 16px;
+  }
+}
+
+ion-content {
+  --background: #f8fafc;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px 32px;
+  background: #ffffff;
+  border-radius: 0 0 30px 30px; /* Curva suave no fundo */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  margin-bottom: 20px;
+  
+  .custom-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    
+    /* ESTILO VIBRANTE (Igual Home/Consultas) */
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    color: #334155;
+    font-size: 36px;
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #1e293b;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0 0 20px 0;
+  }
+
+  ion-button {
+    --border-radius: 20px;
+    --border-color: #cbd5e1;
+    --color: #475569;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+}
+
+ion-list {
+  background: transparent;
+  padding-top: 0;
+}
+
+ion-list[inset="true"] {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin: 0 20px 20px; /* Margens laterais maiores */
+  background: #ffffff;
+  overflow: hidden;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #334155;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  font-weight: 500;
+  font-size: 15px;
+  
+  /* Ícones coloridos do menu */
+  .icon-blue   { color: #3b82f6; }
+  .icon-purple { color: #8b5cf6; }
+  .icon-grey   { color: #64748b; }
+  .icon-orange { color: #f97316; }
+}
+
+.version-footer {
+  text-align: center;
+  padding: 10px;
+  
+  p {
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+}

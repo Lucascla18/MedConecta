@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1069022374722",
+    "project_id": "medconecta-app",
+    "storage_bucket": "medconecta-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069022374722:android:365e0fdfebae6fa83236db",
+        "android_client_info": {
+          "package_name": "com.lucas.telemedicina"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhbwPqMTnxYEvrurjAOVu9xh_q8jUVNqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069022374722:android:645a66ef2a3268893236db",
+        "android_client_info": {
+          "package_name": "com.medconecta.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhbwPqMTnxYEvrurjAOVu9xh_q8jUVNqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

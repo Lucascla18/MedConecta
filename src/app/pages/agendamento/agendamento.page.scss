@@ -1,0 +1,102 @@
+:host { --page-background: #ffffff; }
+ion-content { --background: #ffffff; }
+
+/* Títulos e Labels */
+ion-toolbar { --background: #ffffff; ion-title { font-weight: 700; color: #1e293b; font-size: 18px; } }
+.section-label { display: block; font-size: 16px; font-weight: 600; color: #334155; margin-bottom: 12px; margin-top: 8px; padding-left: 4px; }
+.mt-4 { margin-top: 20px; }
+section { margin-bottom: 24px; }
+
+/* --- SELETOR DE MÉDICO (Card Estilizado) --- */
+.doctor-selector {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  transition: all 0.2s;
+  
+  &:active { background: #f1f5f9; transform: scale(0.99); }
+}
+
+.selected-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  .mini-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; color: #334155; font-size: 14px;
+  }
+  
+  .text {
+    display: flex; flex-direction: column;
+    .name { font-weight: 600; color: #1e293b; font-size: 15px; }
+    .spec { font-size: 13px; color: #64748b; }
+  }
+}
+
+.placeholder-info {
+  display: flex; align-items: center; gap: 10px; color: #94a3b8; font-size: 14px;
+  ion-icon { font-size: 20px; }
+}
+
+.chevron { color: #94a3b8; font-size: 18px; }
+
+/* --- CALENDÁRIO --- */
+.calendar-container {
+  background: #ffffff; border: 1px solid #e2e8f0;
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+ion-datetime { --background: #ffffff; border-radius: 20px; }
+
+/* --- GRID DE HORÁRIOS (Mais compacto) --- */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas para caber mais */
+  gap: 10px;
+}
+
+.time-chip {
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  color: #64748b; padding: 10px 4px;
+  border-radius: 12px; text-align: center;
+  font-weight: 500; font-size: 13px;
+  cursor: pointer; transition: all 0.2s;
+}
+
+.time-chip.selected {
+  background: var(--ion-color-primary); color: white;
+  border-color: var(--ion-color-primary); font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--ion-color-primary-rgb), 0.3);
+}
+
+/* --- ESTILOS DO MODAL --- */
+.modal-avatar {
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; color: #334155;
+}
+.doctor-item {
+  --padding-start: 16px; --inner-padding-end: 16px; margin-bottom: 8px;
+  h2 { font-weight: 600; font-size: 15px; color: #1e293b; }
+  p { font-size: 13px; }
+}
+
+/* Rodapé */
+.footer-space { height: 90px; }
+.fixed-bottom {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #ffffff; padding: 16px 24px 30px;
+  border-top: 1px solid #f1f5f9; z-index: 10;
+  
+  ion-button {
+    height: 50px; --border-radius: 14px;
+    font-weight: 600; font-size: 16px; margin: 0;
+    --box-shadow: 0 8px 20px rgba(var(--ion-color-primary-rgb), 0.25);
+  }
+}

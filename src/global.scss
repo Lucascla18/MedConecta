@@ -1,0 +1,133 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+:root {
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cores Globais */
+  --ion-background-color: #f8fafc;
+  --ion-text-color: #1e293b;
+  --ion-color-primary: #3880ff;
+
+  /* Cards */
+  --card-background: #ffffff;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --card-border-radius: 16px;
+
+  /* Ripple (Clique) Suave */
+  --ion-color-step-50: #f1f5f9;
+  --ion-color-step-100: #e2e8f0;
+}
+
+/* --- LAYOUT: O android:fitsSystemWindows no XML já cuida do topo --- */
+body {
+  /* Apenas proteção inferior para iPhones sem botão */
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #ffffff;
+}
+
+ion-header {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  --border-width: 0;
+  padding-top: 0;
+}
+
+ion-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ion-text-color);
+}
+
+/* --- OTIMIZAÇÕES DE SISTEMA --- */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+ion-content {
+  --keyboard-offset: 0px !important;
+}
+
+/* Scrollbar Invisível */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* --- BARRA INFERIOR (TABS) --- */
+ion-tab-bar {
+  --background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  height: 60px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+ 
+ion-tab-button {
+  --color: #94a3b8;
+  --color-selected: var(--ion-color-primary);
+}
+ 
+ion-tab-button ion-label {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* --- FORMULÁRIOS (Correção Fundo Amarelo) --- */
+ion-input input:-webkit-autofill,
+ion-input input:-webkit-autofill:hover, 
+ion-input input:-webkit-autofill:focus, 
+ion-input input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #1e293b !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* --- COMPONENTES (Modais e Alertas) --- */
+ion-modal {
+  --border-radius: 20px 20px 0 0;
+  --background: #ffffff;
+}
+
+ion-alert { --backdrop-opacity: 0.4; }
+.alert-wrapper { border-radius: 20px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.2) !important; }
+.alert-button { color: var(--ion-color-primary) !important; font-weight: 600 !important; }
+.ion-hide { display: none !important; }
+
+/* --- BLOQUEIO DE ARRASTAR (Android Fix) --- */
+:root {
+  -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+}
+
+/* Libera digitação nos inputs */
+ion-input, ion-textarea, input, textarea {
+  -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; pointer-events: auto !important;
+}
+
+/* Bloqueia o ícone para evitar o "fantasma" ao arrastar */
+img, ion-icon, ion-avatar, .custom-avatar-large, .list-avatar {
+  pointer-events: none !important; 
+  -webkit-user-drag: none !important; 
+  user-drag: none !important;
+}
+
+/* Garante que o clique funcione no botão pai */
+ion-button, ion-tab-button, ion-item, a {
+  pointer-events: auto; 
+  cursor: pointer;
+}

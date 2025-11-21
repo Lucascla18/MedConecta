@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Meu Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="profile-header">
+    <div class="custom-avatar-large" [style.background-color]="avatarColor">
+      {{ userInitials }}
+    </div>
+    
+    <h2>{{ userName }}</h2>
+    <p>{{ userEmail }}</p>
+    
+    <ion-button shape="round" fill="outline" size="small" (click)="editProfile()">
+      <ion-icon slot="start" name="pencil-outline"></ion-icon>
+      Editar Perfil
+    </ion-button>
+  </div>
+  
+  <ion-list [inset]="true">
+    <ion-item button detail="true" (click)="goTo('documents')">
+      <ion-icon slot="start" name="document-text-outline" class="icon-blue"></ion-icon>
+      <ion-label>Meus Documentos</ion-label>
+    </ion-item>
+    
+    <ion-item button detail="true" (click)="goTo('history')">
+      <ion-icon slot="start" name="time-outline" class="icon-purple"></ion-icon>
+      <ion-label>Histórico de Consultas</ion-label>
+    </ion-item>
+    
+    <ion-item button detail="true" (click)="goTo('settings')">
+      <ion-icon slot="start" name="settings-outline" class="icon-grey"></ion-icon>
+      <ion-label>Configurações</ion-label>
+    </ion-item>
+    
+    <ion-item button detail="true" (click)="goTo('help')">
+      <ion-icon slot="start" name="help-circle-outline" class="icon-orange"></ion-icon>
+      <ion-label>Ajuda e Suporte</ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list [inset]="true">
+    <ion-item button (click)="logout()" lines="none" detail="false">
+      <ion-icon slot="start" name="log-out-outline" color="danger"></ion-icon>
+      <ion-label color="danger">Sair da Conta</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="version-footer">
+    <p>Versão 1.0.0</p>
+  </div>
+
+</ion-content>
