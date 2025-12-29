@@ -4,11 +4,11 @@ A hybrid mobile application designed to bridge the gap between patients and heal
 
 ## 📱 Interface Preview
 <p align="center">
-  <img src="MedConecta/screenshots/login.jpg" width="180" alt="Login Screen">
-  <img src="MedConecta/screenshots/home_page.jpg" width="180" alt="Home Screen">
-  <img src="MedConecta/screenshots/scheduling.jpg" width="180" alt="Scheduling Screen">
-  <img src="MedConecta/screenshots/appointments.jpg" width="180" alt="Appointments List">
-  <img src="MedConecta/screenshots/profile.jpg" width="180" alt="User Profile">
+  <img src="screenshots/login.jpg" width="180" alt="Login Screen">
+  <img src="screenshots/home_page.jpg" width="180" alt="Home Screen">
+  <img src="screenshots/scheduling.jpg" width="180" alt="Scheduling Screen">
+  <img src="screenshots/appointments.jpg" width="180" alt="Appointments List">
+  <img src="screenshots/profile.jpg" width="180" alt="User Profile">
 </p>
 
 ## 🔗 Live Demo
