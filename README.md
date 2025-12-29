@@ -2,7 +2,16 @@
 
 A hybrid mobile application designed to bridge the gap between patients and healthcare providers through real-time scheduling and secure data management.
 
-## 📱 Live Demo
+## 📱 Interface Preview
+<p align="center">
+  <img src="MedConecta/screenshots/login.jpg" width="180" alt="Login Screen">
+  <img src="MedConecta/screenshots/home_page.jpg" width="180" alt="Home Screen">
+  <img src="MedConecta/screenshots/scheduling.jpg" width="180" alt="Scheduling Screen">
+  <img src="MedConecta/screenshots/appointments.jpg" width="180" alt="Appointments List">
+  <img src="MedConecta/screenshots/profile.jpg" width="180" alt="User Profile">
+</p>
+
+## 🔗 Live Demo
 You can access the application here: [https://medconecta-app.web.app/](https://medconecta-app.web.app/)
 
 > **Note:** This application was developed with a **Mobile-First** approach using Ionic. For the best experience on a desktop browser, please enable **Device Mode** (Right-click > Inspect > Toggle Device Toolbar 📱).
@@ -23,7 +32,6 @@ As a **Core Developer** in this collaborative project, I was responsible for:
 - **Real-time Logic:** Implementing the medical appointment scheduling system with **Firebase Firestore**.
 - **State & Data:** Managing asynchronous data flows and reactive programming with **RxJS**.
 - **UI/UX:** Developing responsive components and ensuring a high-quality mobile experience.
-- **Code Quality:** Maintaining clean, documented, and reusable **TypeScript** code.
 
 ## 🏁 Getting Started
 To run this project locally, follow these steps:
