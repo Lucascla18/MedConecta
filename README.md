@@ -23,7 +23,7 @@ As a **Core Developer** in this project, I was responsible for:
 ## 📱 Mobile-First Experience
 This application is optimized for mobile devices. 
 **To view the live demo on a desktop browser:**
-1. Open the [Live Link](SEU_LINK_AQUI)
+1. Open the [Live Link]([SEU_LINK_AQUI](https://medconecta-app.web.app/)
 2. Right-click anywhere and select **Inspect**.
 3. Click the **Device Toolbar icon** (mobile/tablet icon) to enable Mobile View.
 
